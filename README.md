@@ -27,7 +27,7 @@ A grocery store product management application built with Laravel. Manage produc
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/LB552/LaravelFood-individual/
 cd grocery-admin
 ```
 
