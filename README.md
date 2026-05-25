@@ -2,10 +2,6 @@
 
 A grocery store product management application built with Laravel. Manage products, categories, and inventory with an intuitive admin interface.
 
-## Live Site
-
-**[TODO: Paste your deployed site URL here]**
-
 ## Features
 
 - **View Products**: Browse all products with sorting and filtering
@@ -50,13 +46,14 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Run migrations and seed default products
+5. Run migrations and seed default categories and products
 ```bash
 php artisan migrate:fresh --seed
 ```
 
 This will create the database tables and populate them with default products:
 - **Candy**: Lollipop
+- **Caviar**: (no products)
 - **Dairy**: Cheese, Milk
 - **Fruits**: Banana, Melon, Orange
 - **Meat**: Hot Dog
