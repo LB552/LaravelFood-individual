@@ -58,24 +58,40 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     width: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
 }
 
 .close {
-    color: #aaa;
+    color: #999;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #333;
 }
 
 .sort-link {
@@ -171,4 +187,67 @@
 
 #filter-reset-btn:hover {
     background-color: #da190b;
+}
+
+/* Generic form styling for all modals */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+small {
+    color: #666;
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
 }
