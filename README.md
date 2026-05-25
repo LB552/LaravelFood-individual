@@ -1,59 +1,132 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# The Food Store
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A grocery store product management application built with Laravel. Manage products, categories, and inventory with an intuitive admin interface.
 
-## About Laravel
+## Live Site
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**[TODO: Paste your deployed site URL here]**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **View Products**: Browse all products with sorting and filtering
+- **Filter Products**: Filter by category and price range
+- **Sort Products**: Sort alphabetically (case-insensitive) by product name or category, or numerically by price
+- **Add Products**: Create new products with name, image URL, category, price, and description
+- **Create Categories**: Add new categories on-the-fly while creating or editing products
+- **Edit Products**: Update product details including image URLs
+- **Delete Products**: Remove products from inventory
+- **Product Details**: Click on a product name to view full product information
+- **Category Navigation**: Click a category to filter products by that category
 
-## Learning Laravel
+## Getting Started
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.5+
+- Composer
+- SQLite (default) or MySQL
+- Node.js (for asset compilation)
 
-## Laravel Sponsors
+### Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd grocery-admin
+```
 
-### Premium Partners
+2. Install PHP dependencies
+```bash
+composer install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. Copy the environment file
+```bash
+cp .env.example .env
+```
 
-## Contributing
+4. Generate application key
+```bash
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Run migrations and seed default products
+```bash
+php artisan migrate:fresh --seed
+```
 
-## Code of Conduct
+This will create the database tables and populate them with default products:
+- **Candy**: Lollipop
+- **Dairy**: Cheese, Milk
+- **Fruits**: Banana, Melon, Orange
+- **Meat**: Hot Dog
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. Start the development server
+```bash
+php artisan serve
+```
 
-## Security Vulnerabilities
+Visit `http://127.0.0.1:8000` in your browser.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Usage
+
+### Filtering Products
+
+1. Click the **"Filter products"** button
+2. Select a category (or leave blank for all categories)
+3. Enter minimum and/or maximum price (optional)
+4. Click **"Apply Filter"** to see results
+5. Click **"Reset"** to clear filters
+
+Filters persist when sorting and can be combined.
+
+### Sorting Products
+
+Click on **Product**, **Category**, or **Price** column headers to sort:
+- First click: Sort ascending (↑)
+- Second click: Sort descending (↓)
+- Product and Category sort alphabetically (case-insensitive)
+- Price sorts numerically
+
+Sorting preserves active filters.
+
+### Adding Products
+
+1. Click the **"Add"** button
+2. Fill in product details:
+   - **Name** (required)
+   - **Image URL** (optional - use local paths like `product-images/myimage.jpg` or full URLs)
+   - **Category** (required - or create a new one)
+   - **Price** (required)
+   - **Description** (optional)
+3. Click **"Save"** to add the product
+
+### Editing Products
+
+1. Click the **"Edit"** button on any product row
+2. Update any field
+3. Click **"Save"** to apply changes
+
+### Deleting Products
+
+1. Click the **"Delete"** button on any product row
+2. Confirm the deletion in the dialog
+
+### Viewing Product Details
+
+Click on any **product name** to view the full product page with:
+- Product image
+- Category (clickable to filter by category)
+- Full description
+- Price
+
+## Technology Stack
+
+- **Backend**: Laravel 12
+- **Frontend**: Blade templating, vanilla JavaScript
+- **Database**: SQLite
+- **Styling**: CSS3 (Grid layout, flexbox)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
